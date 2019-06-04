@@ -32,3 +32,4 @@ tensquare_qa/target/generated-sources/
 tensquare_recruit/target/generated-sources/
 
 .idea/**
+*.iml
