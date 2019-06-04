@@ -21,3 +21,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+codes/
+tensquare_article/target/generated-sources/
+tensquare_base/src/test/
+tensquare_base/target/generated-sources/
+tensquare_common/src/main/resources/
+tensquare_common/src/test/
+tensquare_common/target/generated-sources/
+tensquare_qa/target/generated-sources/
+tensquare_recruit/target/generated-sources/
+
+.idea/**
