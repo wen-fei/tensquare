@@ -34,6 +34,17 @@ public class UserController {
 	@Autowired
 	private RedisTemplate redisTemplate;
 
+
+	@RequestMapping(value="/login",method=RequestMethod.POST)
+	public Result login(@PathVariable String mobile, @PathVariable String password) {
+		User user = userService.findByMobileAndPassword(mobile, password);
+		if (user != null) {
+			return new Result(true, StatusCode.OK, "登录成功");
+		} else {
+			return new Result(true, StatusCode.LOGINERROR, "用户名或密码错误");
+		}
+	}
+
 	/**
 	 * 用户注册
 	 */

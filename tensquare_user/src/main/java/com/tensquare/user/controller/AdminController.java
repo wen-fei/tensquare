@@ -29,8 +29,23 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
-	
-	
+
+	/**
+	 * 管理员登录
+	 * @param loginMap
+	 * @return
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public Result login(@RequestBody Map<String, String> loginMap) {
+		Admin admin = adminService.findByLoginnameAndPassword(loginMap.get("loginname"), loginMap.get("password"));
+		if (admin != null) {
+			return new Result(true, StatusCode.OK, "登录成功");
+		} else {
+			return new Result(true, StatusCode.ACCESSERROR, "用户名或密码错误");
+		}
+	}
+
+
 	/**
 	 * 查询全部数据
 	 * @return
