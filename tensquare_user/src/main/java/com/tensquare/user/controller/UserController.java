@@ -2,6 +2,7 @@ package com.tensquare.user.controller;
 import java.util.List;
 import java.util.Map;
 
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,6 +19,10 @@ import com.tensquare.user.service.UserService;
 import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
+import util.JwtUtil;
+
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 控制器层
  * @author Administrator
@@ -33,6 +38,12 @@ public class UserController {
 
 	@Autowired
 	private RedisTemplate redisTemplate;
+
+	@Autowired
+	private HttpServletRequest httpServletRequest;
+
+	@Autowired
+	private JwtUtil jwtUtil;
 
 
 	@RequestMapping(value="/login",method=RequestMethod.POST)
@@ -137,10 +148,31 @@ public class UserController {
 	
 	/**
 	 * 删除
+	 * 增加权限验证，必须拥有管理员权限，否则不能删除
+	 * 前后端约定，前端请求微服务时需要添加头信息Authorization，内容为Bearer+空格+token
 	 * @param id
 	 */
 	@RequestMapping(value="/{id}",method= RequestMethod.DELETE)
 	public Result delete(@PathVariable String id ){
+		// 获取头信息
+		String authHeader = httpServletRequest.getHeader("Authorization");
+		if (authHeader == null) {
+			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+		}
+		if (!authHeader.startsWith("Bearer ")) {
+			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+		}
+
+		// 提取Token
+		String token = authHeader.substring(7);
+		Claims claims = jwtUtil.parseJWT(token);
+		if (claims == null) {
+			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+		}
+
+		if (!"admin".equals(claims.get("roles"))) {
+			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+		}
 		userService.deleteById(id);
 		return new Result(true,StatusCode.OK,"删除成功");
 	}
