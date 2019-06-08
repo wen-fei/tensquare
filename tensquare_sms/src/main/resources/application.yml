@@ -11,3 +11,11 @@ aliyun:
     accesskeySecret: Ncj3v39alcRPWVgDxUWnAxuU7rGf98
     template_code: SMS_167400843
     sign_name: tengyun
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

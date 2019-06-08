@@ -1,19 +1,18 @@
-package com.tensquare.sms;
+package com.tensquare.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @author : TenYun
- * @date : 2019-06-07 16:04
+ * @date : 2019-06-08 18:33
  * @description :
  **/
 @SpringBootApplication
-@EnableEurekaClient
-public class SmsApplication {
-
+@EnableEurekaServer
+public class EurekaServer {
     public static void main(String[] args) {
-        SpringApplication.run(SmsApplication.class, args);
+        SpringApplication.run(EurekaServer.class, args);
     }
 }

@@ -5,3 +5,17 @@ spring:
     name: tensuare-sms
   rabbitmq:
     host: 10.201.23.100
+aliyun:
+  sms:
+    accessKeyId: oMDmlLz3D22rwn1I
+    accesskeySecret: Ncj3v39alcRPWVgDxUWnAxuU7rGf98
+    template_code: SMS_167400843
+    sign_name: tengyun
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer-ip-address: true

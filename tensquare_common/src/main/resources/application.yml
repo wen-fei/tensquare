@@ -1,0 +1,4 @@
+jwt:
+  config:
+    key: itcat
+    ttl: 360000

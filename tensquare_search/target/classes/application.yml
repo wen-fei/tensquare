@@ -1,15 +1,12 @@
 server:
-  port: 9006
+  port: 9007
 spring:
   application:
-    name: tensquare-spit
-  data:
-    mongodb:
-      host: 10.201.23.100
-      database: spitdb
-  redis:
-    host: 10.201.23.100
+    name: tensquare-search
 
+  data:
+    elasticsearch:
+      cluster-nodes: 10.201.23.100:9300
 eureka:
   client:
     service-url:
