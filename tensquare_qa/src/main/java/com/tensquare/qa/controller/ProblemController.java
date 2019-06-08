@@ -1,6 +1,8 @@
 package com.tensquare.qa.controller;
+import java.awt.*;
 import java.util.Map;
 
+import com.tensquare.qa.client.LabelClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,6 +30,8 @@ public class ProblemController {
 
 	@Autowired
 	private ProblemService problemService;
+	@Autowired
+	private LabelClient labelClient;
 
 
 	@RequestMapping(value = "/newlist/{labelid}/{page}/{size}", method = RequestMethod.GET)
@@ -71,12 +75,12 @@ public class ProblemController {
 	
 	/**
 	 * 根据ID查询
-	 * @param id ID
+	 * @param labelid ID
 	 * @return
 	 */
-	@RequestMapping(value="/{id}",method= RequestMethod.GET)
-	public Result findById(@PathVariable String id){
-		return new Result(true,StatusCode.OK,"查询成功",problemService.findById(id));
+	@RequestMapping(value="/label/{labelid}",method= RequestMethod.GET)
+	public Result findById(@PathVariable String labelid){
+		return labelClient.findById(labelid);
 	}
 
 
