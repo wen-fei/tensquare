@@ -1,4 +1,5 @@
 package com.tensquare.user.controller;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,8 +50,14 @@ public class UserController {
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public Result login(@PathVariable String mobile, @PathVariable String password) {
 		User user = userService.findByMobileAndPassword(mobile, password);
+
 		if (user != null) {
-			return new Result(true, StatusCode.OK, "登录成功");
+			String token = jwtUtil.createJWT(user.getId(), user.getNickname(), "user");
+			Map<String, String> map = new HashMap<>(3);
+			map.put("token", token);
+			map.put("name", user.getNickname());
+			map.put("avatar", user.getAvatar());
+			return new Result(true, StatusCode.OK, "登录成功", map);
 		} else {
 			return new Result(true, StatusCode.LOGINERROR, "用户名或密码错误");
 		}
@@ -154,24 +161,28 @@ public class UserController {
 	 */
 	@RequestMapping(value="/{id}",method= RequestMethod.DELETE)
 	public Result delete(@PathVariable String id ){
-		// 获取头信息
-		String authHeader = httpServletRequest.getHeader("Authorization");
-		if (authHeader == null) {
-			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
-		}
-		if (!authHeader.startsWith("Bearer ")) {
-			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
-		}
-
-		// 提取Token
-		String token = authHeader.substring(7);
-		Claims claims = jwtUtil.parseJWT(token);
+//		// 获取头信息
+//		String authHeader = httpServletRequest.getHeader("Authorization");
+//		if (authHeader == null) {
+//			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+//		}
+//		if (!authHeader.startsWith("Bearer ")) {
+//			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+//		}
+//
+//		// 提取Token
+//		String token = authHeader.substring(7);
+//		Claims claims = jwtUtil.parseJWT(token);
+//		if (claims == null) {
+//			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+//		}
+//
+//		if (!"admin".equals(claims.get("roles"))) {
+//			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+//		}
+		Claims claims = (Claims) httpServletRequest.getAttribute("admin_claims");
 		if (claims == null) {
-			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
-		}
-
-		if (!"admin".equals(claims.get("roles"))) {
-			return new Result(false, StatusCode.ACCESSERROR, "权限不足");
+			return new Result(false, StatusCode.ACCESSERROR, "无权访问");
 		}
 		userService.deleteById(id);
 		return new Result(true,StatusCode.OK,"删除成功");
