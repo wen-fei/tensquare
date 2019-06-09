@@ -27,6 +27,21 @@ public class FriendController {
     @Autowired
     private HttpServletRequest request;
 
+    /**
+     * 删除好友
+     * @param friendid
+     * @return
+     */
+    public Result remove(@PathVariable String friendid) {
+        Claims claims = (Claims) request.getAttribute("user_claims");
+        if (claims == null) {
+            return new Result(false, StatusCode.ACCESSERROR, "无权访问");
+        }
+
+        friendService.deleteFriend(claims.getId(), friendid);
+        return new Result(true, StatusCode.OK, "删除成功");
+    }
+
     @RequestMapping(value = "/like/{friendid}/{type}", method = RequestMethod.GET)
     public Result addFriend(@PathVariable String friendid, @PathVariable String type) {
         Claims claims = (Claims) request.getAttribute("user_claims");
@@ -41,6 +56,7 @@ public class FriendController {
             }
         } else {
             // 不喜欢
+            friendService.addNoFriend(claims.getId(), friendid);
         }
         return new Result(true, StatusCode.OK, "操作成功");
 
