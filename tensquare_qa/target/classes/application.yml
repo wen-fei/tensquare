@@ -13,7 +13,7 @@ spring:
     show-sql: true
   jwt:
     config:
-      key: itcat
+      key: itcast
 
 eureka:
   client:
@@ -21,3 +21,7 @@ eureka:
       defaultZone: http://localhost:6868/eureka
   instance:
     prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
