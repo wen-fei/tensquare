@@ -6,6 +6,5 @@ spring:
       server:
         git:
           uri: https://github.com/wen-fei/tensquare-config.git
-
 server:
   port: 12000
