@@ -21,6 +21,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import org.springframework.transaction.annotation.Transactional;
 import util.IdWorker;
 
 import com.tensquare.user.dao.UserDao;
@@ -50,6 +51,11 @@ public class UserService {
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
+
+	@Transactional(rollbackFor = Exception.class)
+	public void incFanscount(String userid, int x) {
+		userDao.incFanscount(userid, x);
+	}
 
 	/**
 	 * 根据手机号和密码查询用户

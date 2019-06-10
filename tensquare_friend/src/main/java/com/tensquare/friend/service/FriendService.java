@@ -59,6 +59,11 @@ public class FriendService {
         friendDao.updateLike(friendid, userid, "0");
         // 向不喜欢的表中添加记录
         addNoFriend(userid, friendid);
+        // 减少对方的粉丝数
+        userClient.incFanscount(friendid, -1);
+        // 减少自己的关注数
+        userClient.incFollowcount(userid, -1);
+
     }
 
     public void addNoFriend(String userid, String friendid) {

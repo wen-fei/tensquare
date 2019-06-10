@@ -47,6 +47,17 @@ public class UserController {
 	private JwtUtil jwtUtil;
 
 
+	/**
+	 * 增加粉丝数
+	 * @param userid
+	 * @param x
+	 */
+	@RequestMapping(value = "/incfans/{userid}/{x}", method = RequestMethod.POST)
+	public Result incFanscount(@PathVariable String userid, @PathVariable int x) {
+		userService.incFanscount(userid, x);
+		return new Result(true, StatusCode.OK, "更新成功");
+	}
+
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public Result login(@PathVariable String mobile, @PathVariable String password) {
 		User user = userService.findByMobileAndPassword(mobile, password);
