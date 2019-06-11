@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ff8139b-c3a0-4d9d-b45e-7e0be22bbdd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tensquare_base/src/main/java/com/tensquare/base/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_eureka/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/tensquare_recruit/target/" />
@@ -46,7 +46,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tensquare_eureka/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/UserApplication.java" />
         <option value="$PROJECT_DIR$/tensquare_article/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_gathering/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_recruit/src/main/resources/application.yml" />
@@ -118,6 +127,7 @@
         <option value="$PROJECT_DIR$/tensquare_config/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_base/pom.xml" />
         <option value="$PROJECT_DIR$/tensquare_base/src/main/java/com/tensquare/base/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/tensquare_eureka/pom.xml" />
       </list>
     </option>
   </component>
@@ -168,6 +178,17 @@
             <path>
               <item name="tensquare" type="b2602c69:ProjectViewProjectNode" />
               <item name="tensquare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_eureka" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,7 +342,7 @@
       <workItem from="1559699977099" duration="15812000" />
       <workItem from="1559744342157" duration="131000" />
       <workItem from="1559783480457" duration="90146000" />
-      <workItem from="1560213181713" duration="6373000" />
+      <workItem from="1560213181713" duration="7484000" />
     </task>
     <task id="LOCAL-00001" summary="root pom.xml">
       <created>1559656395627</created>
@@ -533,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560176957508</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="消息总线+云存储配置+刷新配置">
+      <created>1560231483006</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560231483006</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -569,7 +597,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112945000" />
+    <option name="totallyTimeSpent" value="114056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,7 +618,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.24655436" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.24655436" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6722818" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -599,7 +627,7 @@
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32924962" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32924962" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32924962" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21898928" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.37366003" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32924962" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32924962" />
@@ -616,7 +644,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="article module" />
     <MESSAGE value="recruit module" />
     <MESSAGE value="others" />
     <MESSAGE value="gitignore" />
@@ -641,22 +668,10 @@
     <MESSAGE value="SpringCloudConfig" />
     <MESSAGE value="集中配置组件" />
     <MESSAGE value="消息总线" />
-    <option name="LAST_COMMIT_MESSAGE" value="消息总线" />
+    <MESSAGE value="消息总线+云存储配置+刷新配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息总线+云存储配置+刷新配置" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tensquare_friend/src/main/java/com/tensquare/friend/dao/FriendDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#65#1" expanded="true" />
-            <element signature="e#0#68#1" expanded="true" />
-            <element signature="e#0#56#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_friend/src/main/java/com/tensquare/friend/controller/FriendController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -1062,6 +1077,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_eureka/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
