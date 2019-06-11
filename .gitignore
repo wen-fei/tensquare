@@ -32,3 +32,21 @@ tensquare_recruit/target/generated-sources/
 
 .idea/**
 *.iml
+/sources/nginx-1.13.12/**
+tensquare_config/src/test/
+tensquare_config/target/generated-sources/
+tensquare_eureka/src/test/
+tensquare_eureka/target/generated-sources/
+tensquare_friend/src/test/
+tensquare_gathering/target/generated-sources/
+tensquare_manager/src/test/
+tensquare_search/src/test/
+tensquare_search/target/generated-sources/
+tensquare_sms/src/test/
+tensquare_sms/target/generated-sources/
+tensquare_spit/src/test/
+tensquare_spit/target/generated-sources/
+tensquare_user/src/test/
+tensquare_user/target/generated-sources/
+tensquare_web/src/test/
+tensquare_web/target/generated-sources/
