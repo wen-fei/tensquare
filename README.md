@@ -3,7 +3,7 @@
 ![front](https://github.com/wen-fei/tensquare/blob/master/sources/images/front.jpg)
 ### 技术路线
 前后端分离
-- 前端：常见前端库 + 模板类 + node.js
+- 前端：常见前端库 + 模板引擎 + node.js
 - 后端：
     - Spring全家桶：SpringBoot、SpringCloud、SpringMVC、SpringData
     - 数据存储：MySQL、MongoDB、ElasticSearch(Head、ik)
