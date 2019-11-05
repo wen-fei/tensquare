@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * @author : TenYun
  * @date : 2019-06-08 19:00
+ * Feign 本身支持Hystrix，不需要额外引入依赖。
  * @description : @FeignClient注解用于指定从哪个服务中调用功能
  * 里面的名称与被调用的服务名保持一致，并且不能包含下划线。
  **/
